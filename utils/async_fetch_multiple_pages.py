@@ -33,7 +33,7 @@ async def async_fetch_after_page_one(link, pages, per_page=100):
             tasks.append(
                 async_fetch(
                     session,
-                    f"{link}?per_page={per_page}&page={curr_page}",
+                    f"{link}/?per_page={per_page}&page={curr_page}",
                 )
             )
             curr_page += 1
@@ -50,7 +50,7 @@ async def async_fetch_after_page_one(link, pages, per_page=100):
 @my_timeit
 def async_fetch_multiple_pages(link, per_page=100):
     # 1. fetch first page
-    url = f"{link}?per_page={per_page}"
+    url = f"{link}/?per_page={per_page}"
     response = sync_fetch(url)
     # print("status: ", response.status_code)
 

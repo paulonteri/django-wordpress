@@ -19,7 +19,7 @@ def fetch_after_page_one(link, pages, per_page=100):
     response_data = []
     curr_page = 2
     while curr_page <= pages:
-        res = sync_fetch(f"{link}?per_page={per_page}&page={curr_page}", )
+        res = sync_fetch(f"{link}/?per_page={per_page}&page={curr_page}", )
         response_data += res.json()
         curr_page += 1
 
@@ -29,7 +29,7 @@ def fetch_after_page_one(link, pages, per_page=100):
 @my_timeit
 def sync_fetch_multiple_pages(link, per_page=100):
     # 1. fetch first page
-    url = f"{link}?per_page={per_page}"
+    url = f"{link}/?per_page={per_page}"
     response = sync_fetch(url)
     # print("status: ", response.status_code)
 
