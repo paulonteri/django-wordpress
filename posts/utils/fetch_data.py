@@ -9,3 +9,8 @@ base_url = env('BASE_URL')
 def fetch_tags():
     data = sync_fetch_multiple_pages(f"{base_url}/tags")
     return data
+
+
+def fetch_categories():
+    data = sync_fetch_multiple_pages(f"{base_url}/categories")
+    return data
