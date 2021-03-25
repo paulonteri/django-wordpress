@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     # local apps
     'accounts',
     'posts',
+    'common',
     # always last. Used to auto delete files.
     'django_cleanup.apps.CleanupConfig',
 ]
